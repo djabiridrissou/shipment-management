@@ -4,7 +4,7 @@ module.exports = {
   apps: [
     {
       name: "jodi-construction-be",
-      script: "dist/src/index.js",
+      script: "build/src/index.js",
       exec_mode: "cluster",
       instances: "2",
     },

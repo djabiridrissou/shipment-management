@@ -3,7 +3,7 @@
 module.exports = {
   apps: [
     {
-      name: "jodi-construction-be",
+      name: "zovu-backend",
       script: "build/index.js",
       exec_mode: "cluster",
       instances: "2",

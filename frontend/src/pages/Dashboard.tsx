@@ -40,7 +40,7 @@ const Dashboard: React.FC = () => {
   };
 
   const handleDelete = async (id: string) => {
-    // Afficher une boîte de dialogue de confirmation avec SweetAlert2
+    
     const result = await Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -51,15 +51,15 @@ const Dashboard: React.FC = () => {
       confirmButtonText: "Yes, delete it!",
     });
 
-    // Si l'utilisateur confirme, procéder à la suppression
+   
     if (result.isConfirmed) {
       try {
-        await deleteOne(id).unwrap(); // Appeler la mutation de suppression
-        refetch(); // Rafraîchir les données après suppression
-        Swal.fire("Deleted!", "The shipment has been deleted.", "success"); // Afficher une notification de succès
+        await deleteOne(id).unwrap(); 
+        refetch(); 
+        Swal.fire("Deleted!", "The shipment has been deleted.", "success"); 
       } catch (error) {
         console.error("Error deleting shipment:", error);
-        Swal.fire("Error!", "Something went wrong. Please try again.", "error"); // Afficher une notification d'erreur
+        Swal.fire("Error!", "Something went wrong. Please try again.", "error"); 
       }
     }
   };
@@ -102,10 +102,10 @@ const Dashboard: React.FC = () => {
                 </p>
               </div>
 
-              {/* Icône de suppression */}
+             
               <DeleteOutlined
                 onClick={(e) => {
-                  e.stopPropagation(); // Empêche le clic de se propager à la carte
+                  e.stopPropagation();
                   handleDelete(shipment.id.toString());
                 }}
                 className="absolute top-2 right-2 text-red-600 cursor-pointer"

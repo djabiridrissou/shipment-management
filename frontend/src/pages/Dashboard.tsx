@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useNavigate } from "react";
 import { Button, Card, Pagination } from "antd";
 import { UploadOutlined, DeleteOutlined } from "@ant-design/icons";
 import UploadFilesModal from "../components/UploadFilesModal";
@@ -15,6 +15,7 @@ interface Shipment {
 const Dashboard: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
+  const navigate = useNavigate();
 
   const { data, isLoading, refetch } = useFetchFilesQuery(
     { page: currentPage, limit: pageSize },
@@ -90,7 +91,7 @@ const Dashboard: React.FC = () => {
               key={shipment._id}
               className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 relative"
               title={`Shipment ${index + 1 + (currentPage - 1) * pageSize}`}
-              onClick={() => { localStorage.setItem("shipmentId", shipment._id); window.location.href = "/shipment"; }}
+              onClick={() => { localStorage.setItem("shipmentId", shipment._id); navigate("/shipment"); }}
               hoverable
             >
               <div className="text-center mb-4">

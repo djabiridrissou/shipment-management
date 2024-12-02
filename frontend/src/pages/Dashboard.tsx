@@ -1,10 +1,11 @@
-import React, { useState, useNavigate } from "react";
+import React, { useState } from "react";
 import { Button, Card, Pagination } from "antd";
 import { UploadOutlined, DeleteOutlined } from "@ant-design/icons";
 import UploadFilesModal from "../components/UploadFilesModal";
 import dayjs from "dayjs";
 import { useDeleteOneMutation, useFetchFilesQuery } from "../redux/features/api/apiSlice";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 interface Shipment {
   _id: string;

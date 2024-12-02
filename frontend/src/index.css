@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Montserrat", "Nunito", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Montserrat", "Nunito", sans-serif;
+  background-color: #f9f9f9;
+}
+
+
+
+/* Appliquer à tous les scrollbars */
+::-webkit-scrollbar {
+  width: 2px; /* Largeur de la scrollbar */
+  height: 8px; /* Hauteur pour les scrollbars horizontales */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Couleur du fond de la scrollbar */
+  border-radius: 10px; /* Coins arrondis */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Facultatif : pour les scrollbars sombres sur un fond sombre */
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: #444;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
